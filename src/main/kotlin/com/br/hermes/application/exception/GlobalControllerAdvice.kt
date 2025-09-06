@@ -35,14 +35,12 @@ class GlobalControllerAdvice(
 
     @ExceptionHandler(MethodArgumentNotValidException::class)
     fun handleValidationException(exception: MethodArgumentNotValidException): ResponseEntity<ErrorHttpResponseDto> {
-        // Agrupa os erros por campo e traduz as mensagens
         val errorsByField: Map<String, List<String>> = exception.bindingResult.fieldErrors
             .groupBy { it.field }
             .mapValues { entry ->
                 entry.value.map { messageSource.getMessage(it, LocaleContextHolder.getLocale()) }
             }
 
-        // Ordena campos e mensagens
         val errors: List<String> = errorsByField
             .toSortedMap()
             .flatMap { it.value.sorted() }

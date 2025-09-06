@@ -30,6 +30,6 @@ fun interface SendController {
             schema = Schema(implementation = ErrorHttpResponseDto::class)
         )]
     )
-    @PostMapping(value = [ControllerConstants.V1 + ControllerConstants.SEND], consumes = [MediaType.APPLICATION_JSON_VALUE])
+    @PostMapping(value = [ControllerConstants.SEND], consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun email(@RequestBody @Valid request: MessageRequest): ResponseEntity<Unit>
 }

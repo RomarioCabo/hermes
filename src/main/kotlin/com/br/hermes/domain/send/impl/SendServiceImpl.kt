@@ -14,11 +14,9 @@ import org.thymeleaf.spring6.SpringTemplateEngine
 @Service
 class SendServiceImpl(
     private val mailSender: JavaMailSender,
-    private val templateEngine: SpringTemplateEngine
+    private val templateEngine: SpringTemplateEngine,
+    @Value("\${mail.username}") private val from: String
 ) : SendService {
-
-    @Value("\${mail.username}")
-    private lateinit var from: String
 
     override fun email(request: MessageRequest) {
         val context: Context = Context().apply {
