@@ -32,7 +32,7 @@ springdoc:
     path: "/swagger-ui.html"
     enabled: true
     operations-sorter: "method"
-  packagesToScan: com.br.messaging_api.application.controller
+  packagesToScan: com.br.hermes.application.controller
 
 server:
   port: 8082
