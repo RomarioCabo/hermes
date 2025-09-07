@@ -1,6 +1,6 @@
 package com.br.hermes.domain.send
 
-import com.br.hermes.domain.dto.MessageRequest
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import com.br.hermes.domain.send.impl.SendServiceImpl
 import jakarta.mail.internet.MimeMessage
 import org.junit.jupiter.api.BeforeEach

@@ -1,13 +1,13 @@
-package com.br.hermes.application.controller.impl
+package com.br.hermes.application.controller.send.impl
 
-import com.br.hermes.application.controller.SendController
+import com.br.hermes.application.controller.send.SendController
 import com.br.hermes.domain.send.SendService
 import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.http.ResponseEntity
 import com.br.hermes.application.controller.constants.ControllerConstants.V1
-import com.br.hermes.domain.dto.MessageRequest
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 
 @CrossOrigin("*")
 @RestController
@@ -16,8 +16,6 @@ class SendControllerImpl(
     private val sendService: SendService
 ) : SendController {
 
-    override fun email(request: MessageRequest): ResponseEntity<Unit> {
-        sendService.email(request)
-        return ResponseEntity.ok().build()
-    }
+    override fun email(request: MessageRequest): ResponseEntity<Unit> =
+        sendService.email(request).let { ResponseEntity.ok().build() }
 }

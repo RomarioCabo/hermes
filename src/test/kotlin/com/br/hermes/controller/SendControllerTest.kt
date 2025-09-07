@@ -1,7 +1,7 @@
 package com.br.hermes.controller
 
-import com.br.hermes.application.controller.impl.SendControllerImpl
-import com.br.hermes.domain.dto.MessageRequest
+import com.br.hermes.application.controller.send.impl.SendControllerImpl
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import com.br.hermes.domain.send.SendService
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.BeforeEach

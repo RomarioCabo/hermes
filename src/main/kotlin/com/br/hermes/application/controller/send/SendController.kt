@@ -1,8 +1,8 @@
-package com.br.hermes.application.controller
+package com.br.hermes.application.controller.send
 
 import com.br.hermes.application.controller.constants.ControllerConstants
 import com.br.hermes.application.exception.ErrorHttpResponseDto
-import com.br.hermes.domain.dto.MessageRequest
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse

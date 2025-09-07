@@ -1,5 +1,6 @@
 package com.br.hermes.domain.dto
 
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import jakarta.validation.Validation
 import jakarta.validation.Validator
 import org.junit.jupiter.api.BeforeAll

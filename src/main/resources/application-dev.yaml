@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:postgresql://localhost:5442/hermes_db
+      username: hermes_user
+      password: hermes_password
+      connection-test-query: SELECT 1

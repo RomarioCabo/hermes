@@ -1,6 +1,6 @@
 package com.br.hermes.domain.send.impl
 
-import com.br.hermes.domain.dto.MessageRequest
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import com.br.hermes.domain.send.SendService
 import jakarta.mail.MessagingException
 import jakarta.mail.internet.MimeMessage

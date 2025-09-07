@@ -1,4 +1,4 @@
-package com.br.hermes.domain.dto
+package com.br.hermes.domain.dto.sendemail
 
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotBlank
