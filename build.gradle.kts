@@ -32,6 +32,7 @@ val commonsIoVersion = "2.20.0"
 val modelMapperVersion = "3.2.4"
 val springSecurityCryptoVersion = "6.4.4"
 val commonsCodecVersion = "1.19.0"
+val ognlVersion = "3.2.21"
 
 fun DependencyHandlerScope.coreDependencies() {
     implementation("org.springframework.boot:spring-boot-starter-web") {
@@ -46,6 +47,7 @@ fun DependencyHandlerScope.coreDependencies() {
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("ognl:ognl:$ognlVersion")
 }
 
 fun DependencyHandlerScope.databaseDependencies() {

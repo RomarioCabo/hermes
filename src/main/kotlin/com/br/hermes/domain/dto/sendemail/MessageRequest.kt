@@ -8,6 +8,9 @@ data class MessageRequest(
     @field:NotBlank(message = "O campo templateId não pode ser vazio ou nulo.")
     val templateId: String,
 
+    @field:NotBlank(message = "O team templateId não pode ser vazio ou nulo.")
+    val team: String,
+
     @field:NotNull(message = "O templateVariables não pode ser nulo.")
     val templateVariables: Map<String, Any>,
 
