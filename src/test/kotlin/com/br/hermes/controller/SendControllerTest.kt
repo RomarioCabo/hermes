@@ -26,6 +26,7 @@ class SendControllerTest {
 
     companion object {
         private const val TEMPLATE_ID = "otp-template"
+        private const val TEAM = "ANY"
         private const val EMAIL_TO = "destinatario@example.com"
         private const val SUBJECT = "Código OTP"
         private val TEMPLATE_VARIABLES = mapOf("code" to "123456")
@@ -55,6 +56,7 @@ class SendControllerTest {
     private fun buildOtpRequest(): MessageRequest =
         MessageRequest(
             templateId = TEMPLATE_ID,
+            team = TEAM,
             emailTo = EMAIL_TO,
             subject = SUBJECT,
             templateVariables = TEMPLATE_VARIABLES
