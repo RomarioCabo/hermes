@@ -1,5 +1,6 @@
 package com.br.hermes.domain.dto
 
+import com.br.hermes.domain.dto.sendemail.MessageRequest
 import jakarta.validation.Validation
 import jakarta.validation.Validator
 import org.junit.jupiter.api.BeforeAll
@@ -24,6 +25,7 @@ class MessageRequestTest {
     fun `valid MessageRequest should have no violations`() {
         val request = MessageRequest(
             templateId = "welcome-template",
+            team = "any",
             templateVariables = mapOf("name" to "Romário"),
             emailTo = "test@example.com",
             subject = "Bem-vindo!"
@@ -37,6 +39,7 @@ class MessageRequestTest {
     fun `blank templateId should fail validation`() {
         val request = MessageRequest(
             templateId = "",
+            team = "any",
             templateVariables = mapOf("key" to "value"),
             emailTo = "test@example.com",
             subject = "Assunto"
@@ -51,6 +54,7 @@ class MessageRequestTest {
     fun `invalid email should fail validation`() {
         val request = MessageRequest(
             templateId = "template",
+            team = "any",
             templateVariables = mapOf("key" to "value"),
             emailTo = "invalid-email",
             subject = "Assunto"
@@ -65,6 +69,7 @@ class MessageRequestTest {
     fun `blank subject should fail validation`() {
         val request = MessageRequest(
             templateId = "template",
+            team = "any",
             templateVariables = mapOf("key" to "value"),
             emailTo = "test@example.com",
             subject = ""

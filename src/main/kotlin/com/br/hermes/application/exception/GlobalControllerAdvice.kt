@@ -56,4 +56,18 @@ class GlobalControllerAdvice(
             .contentType(APPLICATION_JSON)
             .body(errorDto)
     }
+
+    @ExceptionHandler(TemplateNotFoundException::class)
+    fun handleTemplateNotFoundException(ex: TemplateNotFoundException): ResponseEntity<ErrorHttpResponseDto> {
+        val errorHttpResponseDto = ErrorHttpResponseDto(
+            code = BAD_REQUEST.toString(),
+            title = TITLE,
+            message = ex.message ?: "Template não encontrado",
+            timestamp = LocalDateTime.now()
+        )
+
+        return ResponseEntity.status(BAD_REQUEST)
+            .contentType(APPLICATION_JSON)
+            .body(errorHttpResponseDto)
+    }
 }

@@ -35,5 +35,4 @@ springdoc:
   packagesToScan: com.br.hermes.application.controller
 
 server:
-  port: 8082
   shutdown: graceful

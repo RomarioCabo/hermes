@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+
+  local-hermes-db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: "hermes_db"
+      POSTGRES_USER: "hermes_user"
+      POSTGRES_PASSWORD: "hermes_password"
+    ports:
+      - "5442:5432"
+    volumes:
+      - postgres-data-local:/var/lib/postgresql/data
+    container_name: local-hermes-db
+    networks:
+      - hermes-shared-net
+
+volumes:
+  postgres-data-local:
+    driver: local
+
+networks:
+  hermes-shared-net:
+    name: hermes-shared-net
