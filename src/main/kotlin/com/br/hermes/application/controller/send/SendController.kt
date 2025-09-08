@@ -2,6 +2,7 @@ package com.br.hermes.application.controller.send
 
 import com.br.hermes.application.controller.constants.ControllerConstants
 import com.br.hermes.application.exception.ErrorHttpResponseDto
+import com.br.hermes.domain.dto.defaultresponse.DefaultResponse
 import com.br.hermes.domain.dto.sendemail.MessageRequest
 import io.swagger.v3.oas.annotations.media.Content
 import io.swagger.v3.oas.annotations.media.Schema
@@ -20,7 +21,10 @@ fun interface SendController {
     @ApiResponse(
         responseCode = "200",
         description = "Email enviado com sucesso.",
-        content = [Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = Schema())]
+        content = [Content(
+            mediaType = MediaType.APPLICATION_JSON_VALUE,
+            schema = Schema(implementation = DefaultResponse::class)
+        )]
     )
     @ApiResponse(
         responseCode = "500",
@@ -31,5 +35,5 @@ fun interface SendController {
         )]
     )
     @PostMapping(value = [ControllerConstants.SEND], consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun email(@RequestBody @Valid request: MessageRequest): ResponseEntity<Unit>
+    fun email(@RequestBody @Valid request: MessageRequest): ResponseEntity<DefaultResponse>
 }

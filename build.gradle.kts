@@ -64,7 +64,7 @@ fun DependencyHandlerScope.documentationDependencies() {
 }
 
 fun DependencyHandlerScope.utilityDependencies() {
-    implementation("com.fasterxml.jackson.core:jackson-annotations")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.20.0")
     implementation("org.modelmapper:modelmapper:$modelMapperVersion")
     implementation("org.apache.httpcomponents:fluent-hc:$fluentHcVersion")
     testImplementation("org.apache.httpcomponents:httpclient:$fluentHcVersion")
@@ -80,6 +80,11 @@ fun DependencyHandlerScope.kotlinDependencies() {
 
 fun DependencyHandlerScope.devDependencies() {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+}
+
+fun DependencyHandlerScope.kafkaDependencies() {
+    implementation("org.springframework.kafka:spring-kafka:3.3.9")
+    testImplementation("org.springframework.kafka:spring-kafka-test:3.3.9")
 }
 
 fun DependencyHandlerScope.testDependencies() {
@@ -100,6 +105,7 @@ dependencies {
     utilityDependencies()
     kotlinDependencies()
     devDependencies()
+    kafkaDependencies()
     testDependencies()
 }
 
